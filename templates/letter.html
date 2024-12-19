@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personalized Love Letter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>&#x1F48C; A Letter for {{ recipient_name }} &#x1F48C;</h2>
+        <p>Dear <strong>{{ recipient_name }}</strong>,</p>
+        
+        <p>{{ message }}</p>
+
+        <p>One of my favorite memories with you is: <em>"{{ special_memory }}"</em>.</p>
+
+        {% if image_url %}
+            <p>Here's a special photo I cherish with you:</p>
+            <img src="{{ image_url }}" alt="Special Memory" style="max-width: 200px; height: auto; border: 1px solid #ccc;">
+        {% else %}
+            <p>No photo uploaded.</p>
+        {% endif %}
+        
+        <p>With all my love,</p>
+        <p><strong>{{ sender_name }}</strong></p>
+
+       <!-- Download Button -->
+<a href="{{ letter_path }}">
+    <button onclick="window.print()">Download/Print This Letter &#x1F4BE;</button>
+
+</a>
+
+
+        <a href="/" style="display: block; margin-top: 20px; text-decoration: none; color: #641e1e;">Write Another Letter</a>
+    </div>
+</body>
+</html>
