@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Create Your Personalized Love Letter Here &#x1F48C;</h1>
+
+    <div class="container">
+        <form action="/generate_letter" method="post" enctype="multipart/form-data"> <!-- FIXED HERE -->
+            <label for="recipient_name">Recipient's Name:</label>
+            <input type="text" id="recipient_name" name="recipient_name" required>
+
+            <label for="message">Special Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <label for="special_memory">Favorite Memory Together:</label>
+            <input type="text" id="special_memory" name="special_memory" required>
+
+            <label for="image">Upload a Special Photo:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <label for="sender_name">Your Name:</label>
+            <input type="text" id="sender_name" name="sender_name" required>
+
+            <button type="submit">Generate Letter &#x1F495;</button>
+        </form>
+    </div>
+</body>
+</html>
