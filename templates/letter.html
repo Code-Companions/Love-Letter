@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Personalized Love Letter</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='love_calculator.js') }}"></script>
 </head>
 <body>
     <div class="container">
@@ -25,12 +26,12 @@
         <p>With all my love,</p>
         <p><strong>{{ sender_name }}</strong></p>
 
-       <!-- Download Button -->
-<a href="{{ letter_path }}">
-    <button onclick="window.print()">Download/Print This Letter &#x1F4BE;</button>
+        <!-- Download Button -->
+        <a href="{{ letter_path }}">
+            <button>Download/Print This Letter as PDF &#x1F4BE;</button>
+        </a>
 
-</a>
-
+       
 
         <a href="/" style="display: block; margin-top: 20px; text-decoration: none; color: #641e1e;">Write Another Letter</a>
     </div>
